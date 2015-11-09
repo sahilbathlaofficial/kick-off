@@ -1,0 +1,13 @@
+<h1>Admin Section</h1>
+<div>Please Enter Details of the event !!!</div>
+
+<span> Event By </span>
+<% channels_array = Channels.pluck(:name, :id) %>
+<span>
+	<%= select_tag(:channel_id, options_for_select(channels_array)) %>
+</span><br/>
+<span> Event Description </span><br/>
+<textarea id="event-desc" placeholder="Please enter event description" rows="10" cols="100"></textarea><br/>
+<span> Event Link </span>
+<input placeholder="Link to Event" id="event-url"></input><br/>
+<button id="send-notification">Send</button>

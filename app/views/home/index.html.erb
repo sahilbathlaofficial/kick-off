@@ -1,0 +1,13 @@
+<body>
+	<div class="subscription-container">
+		<span> I want to subscribe to </span>
+		<% channels_array = Channels.pluck(:name, :id) %>
+		<span>
+			<%= select_tag(:channel_id, options_for_select(channels_array)) %>
+		</span>
+		<span>
+			<button id="subscribe">Subscribe</button>
+		</span>
+	</div>
+	<ul class="subscribed-channels-list">Your Subscribed Channels</ul>
+</body>
