@@ -42,14 +42,7 @@ $(function() {
 			channels.push($('select option:selected').text());
 			localStorage.channels = JSON.stringify(channels);
 			showChannels();
-			$.ajax({
-				url: '/send-notification',
-				data: {
-					url: 'https://pushcrew.com/api/v1/segments/' + (parseInt($('select').val(), 10) + 4) + '/subscribers',
-					data: { subscriber_list: [pushcrew.subscriberId] },
-				},
-				type: 'POST'
-		    });
+			_pcq.push(['addSubscriberToSegment', $('select option:selected').text()]);
 		}
 	});
 
