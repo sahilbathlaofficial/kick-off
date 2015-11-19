@@ -37,4 +37,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 gem 'byebug', group: [:development, :test]
+gem 'rails_12factor', group: :production
+
+ruby '2.0.0'
 
